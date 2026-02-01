@@ -1,0 +1,171 @@
+<form class="cadastro-requisito-form">
+    <div class="content">
+        <h3>
+            Ref. Lista de Verificação de Atendimento aos Requisitos Legais
+        </h3>
+
+        <p>
+            Prezado (s) Senhor (es),
+
+            Estamos relacionando abaixo os documentos necessários para atender a Portaria nº 3.214, de 8 de junho de
+            1978 e
+            alterações previstas como também a CLT, para serem apresentados pela contratada, durante o período de
+            execução
+            da
+        </p>
+        <mat-form-field class="full-width">
+            <mat-label>Nome da tarefa</mat-label>
+            <input type="text" matInput [formControl]="tarefaFormControl">
+            @if (tarefaFormControl.hasError('required')) {
+            <mat-error>Nome da tarefa é <strong>Obrigatória</strong></mat-error>
+            }
+        </mat-form-field>
+
+        <mat-card class="card" appearance="outlined">
+            <mat-card-header>
+                <mat-card-title>01 NR 1</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <label id="example-radio-group-label">Apresentar o Plano de Segurança para a obra.</label>
+                <br>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    name="apresentarPlanoSegurancaObra" [(ngModel)]="apresentarPlanoSegurancaObra">
+                    @for (opcao of opcoes; track opcao) {
+                    <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                    }
+                </mat-radio-group>
+
+            </mat-card-content>
+            <mat-form-field class="full-width">
+                <mat-label>Ação a ser tomada</mat-label>
+                <textarea matInput [formControl]="apresentarPlanoSegurancaObraAcaoFormControl"></textarea>
+            </mat-form-field>
+        </mat-card>
+
+        <mat-card class="card" appearance="outlined">
+            <mat-card-header>
+                <mat-card-title>02 Geral</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <label id="example-radio-group-label">
+                    Apresentar para aprovação os Curriculum Vitae de Engenheiro e Técnico de Segurança.
+                </label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    name="apresentarAprovacaoCurriculumVitaeEngenheiroTecnicoSeguranca"
+                    [(ngModel)]="apresentarAprovacaoCurriculumVitaeEngenheiroTecnicoSeguranca">
+                    @for (opcao of opcoes; track opcao) {
+                    <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                    }
+                </mat-radio-group>
+
+            </mat-card-content>
+            <mat-form-field class="full-width">
+                <mat-label>Ação a ser tomada</mat-label>
+                <textarea matInput
+                    [formControl]="apresentarAprovacaoCurriculumVitaeEngenheiroTecnicoSegurancaAcaoFormControl"></textarea>
+            </mat-form-field>
+        </mat-card>
+
+        <mat-card class="card" appearance="outlined">
+            <mat-card-header>
+                <mat-card-title>03 4.3.3 4.4 4.4.1</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <label id="example-radio-group-label">
+                    Apresentar a comprovação das especializações dos profissionais do SESMT.
+                </label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    name="apresentarComprovacaoEspecializacoesProfissionaisSESMT"
+                    [(ngModel)]="apresentarComprovacaoEspecializacoesProfissionaisSESMT">
+                    @for (opcao of opcoes; track opcao) {
+                    <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                    }
+                </mat-radio-group>
+
+            </mat-card-content>
+            <mat-form-field class="full-width">
+                <mat-label>Ação a ser tomada</mat-label>
+                <textarea matInput
+                    [formControl]="apresentarComprovacaoEspecializacoesProfissionaisSESMTAcaoFormControl"></textarea>
+            </mat-form-field>
+        </mat-card>
+
+        <mat-card class="card" appearance="outlined">
+            <mat-card-header>
+                <mat-card-title>04 4.4.2</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <label id="example-radio-group-label">
+                    Apresentar a comprovação do vínculo empregatício dos profissionais do SESMT
+                </label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    name="apresentarComprovacaoVinculoEmpregaticioProfissionaisSESMT"
+                    [(ngModel)]="apresentarComprovacaoVinculoEmpregaticioProfissionaisSESMT">
+                    @for (opcao of opcoes; track opcao) {
+                    <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                    }
+                </mat-radio-group>
+
+            </mat-card-content>
+            <mat-form-field class="full-width">
+                <mat-label>Ação a ser tomada</mat-label>
+                <textarea matInput
+                    [formControl]="apresentarComprovacaoVinculoEmpregaticioProfissionaisSESMTAcaoFormControl"></textarea>
+            </mat-form-field>
+        </mat-card>
+
+        <mat-card class="card" appearance="outlined">
+            <mat-card-header>
+                <mat-card-title>05 4.12.d</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <label id="example-radio-group-label">
+                    Cópia da ART do profissional que chefia o SESMT.
+                </label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    name="copiaARTProfissionalChefiaSESMT" [(ngModel)]="copiaARTProfissionalChefiaSESMT">
+                    @for (opcao of opcoes; track opcao) {
+                    <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                    }
+                </mat-radio-group>
+
+            </mat-card-content>
+            <mat-form-field class="full-width">
+                <mat-label>Ação a ser tomada</mat-label>
+                <textarea matInput [formControl]="copiaARTProfissionalChefiaSESMTAcaoFormControl"></textarea>
+            </mat-form-field>
+        </mat-card>
+
+        <mat-card class="card" appearance="outlined">
+            <mat-card-header>
+                <mat-card-title>06 4.12.i</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <label id="example-radio-group-label">
+                    Apresentação dos Quadros III, IV, V e VI e comprovante de envio anual para DRT, até 31 de janeiro do
+                    ano subseqüente.
+                </label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    name="apresentacaoQuadrosIII_IV_V_VIComprovanteEnvioAnualDRT31JaneiroAnoSubsequente"
+                    [(ngModel)]="apresentacaoQuadrosIII_IV_V_VIComprovanteEnvioAnualDRT31JaneiroAnoSubsequente">
+                    @for (opcao of opcoes; track opcao) {
+                    <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                    }
+                </mat-radio-group>
+
+            </mat-card-content>
+            <mat-form-field class="full-width">
+                <mat-label>Ação a ser tomada</mat-label>
+                <textarea matInput
+                    [formControl]="apresentacaoQuadrosIII_IV_V_VIComprovanteEnvioAnualDRT31JaneiroAnoSubsequenteAcaoFormControl"></textarea>
+            </mat-form-field>
+        </mat-card>
+
+    </div>
+</form>

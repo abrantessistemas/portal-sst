@@ -1,0 +1,38 @@
+<div class="navbar">
+    <div class="top">
+        <!-- <mat-icon>notifications_none</mat-icon> -->
+    </div>
+    <div class="user">
+        <img class="img" src="logo.png" />
+        <h4 class="name">admin</h4>
+        <p class="mail">admin@gmiau.com</p>
+
+    </div>
+    <div class="menu">
+        <div class="menu-head">
+            <div class="menu-item">
+                <button mat-button class="menu-button" [routerLink]="['dashboard']">
+                    <mat-icon class="mat-18">dashboard</mat-icon>
+                    <span>Home</span>
+                </button>
+                <!-- <button mat-button class="menu-button" [routerLink]="['nr-32']">
+                    <mat-icon>check_circle_24</mat-icon>
+                    <span>NR 32</span>
+                </button> -->
+                <button mat-button class="menu-button" [routerLink]="['requisitos-legais']">
+                    <mat-icon class="mat-18">dynamic_form_24</mat-icon>
+                    <span>Requisitos Legais</span>
+                </button>
+                <!-- <button mat-button class="menu-button">
+                    <mat-icon class="mat-18">pages</mat-icon>
+                    <span>Pages</span>
+                </button>
+                <button mat-button class="menu-button">
+                    <mat-icon class="mat-18">settings</mat-icon>
+                    <span>Setting</span>
+                </button> -->
+            </div>
+        </div>
+    </div>
+
+</div>

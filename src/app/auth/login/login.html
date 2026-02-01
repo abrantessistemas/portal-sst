@@ -1,0 +1,33 @@
+<form class="login-form">
+    <div class="logo-container">
+        <img class="logo" src="logo.png" alt="Logo">
+        <h2>LMs Consultoria em SST</h2>
+        <h3>Saúde e segurança do trabalho</h3>
+    </div>
+    <mat-form-field class="full-width">
+        <mat-label>E-mail/login</mat-label>
+        <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+            placeholder="Ex. usuario@example.com">
+        @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+        <mat-error>Por favo entre com seu email de login</mat-error>
+        }
+        @if (emailFormControl.hasError('required')) {
+        <mat-error>Email é <strong>Obrigatório</strong></mat-error>
+        }
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="hide() ? 'password' : 'text'" [formControl]="passwordFormControl" />
+        <button matIconButton matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide()">
+            <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        @if (passwordFormControl.hasError('required')) {
+        <mat-error>Senha é <strong>Obrigatória</strong></mat-error>
+        }
+    </mat-form-field>
+    <div class="button-row">
+        <button class="btn-submit" matButton="filled" (click)="navigateToUsuario()">Entrar</button>
+        <!-- <button class="btn-submit" matButton="filled" (click)="navigateToUsuario()">Criar conta</button> -->
+    </div>
+</form>
