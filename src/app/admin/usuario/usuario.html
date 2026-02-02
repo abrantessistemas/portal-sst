@@ -1,1 +1,71 @@
 <p>usuario works!</p>
+<form class="usuario-form">
+    <div class="logo-container">
+        <h3>Cadastro do usuário</h3>
+    </div>
+
+    <mat-checkbox labelPosition="before" [formControl]="usuarioAtivoFormControl">Usuário ativo</mat-checkbox>
+
+    <mat-form-field class="full-width">
+        <mat-label>Nome</mat-label>
+        <input type="text" matInput [formControl]="nomeFormControl">
+        @if (nomeFormControl.hasError('required')) {
+        <mat-error>Nome é <strong>Obrigatório</strong></mat-error>
+        }
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>E-mail /Login</mat-label>
+        <input type="email" matInput [formControl]="emailFormControl" placeholder="exemplo@dominio.com">
+        @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+        <mat-error>Por favor, insira um e-mail <strong>válido</strong></mat-error>
+        }
+        @if (emailFormControl.hasError('required')) {
+        <mat-error>E-mail é <strong>Obrigatório</strong></mat-error>
+        }
+    </mat-form-field>
+
+    <h4>Perfil do Usuário</h4>
+    <mat-form-field>
+        <mat-label>Perfil do Usuário</mat-label>
+        <select matNativeControl required>
+            <option value="Sistema">Sistema</option>
+            <option value="Administrador">Administrador</option>
+            <option value="Cliente">Cliente</option>
+        </select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="hideSenha() ? 'password' : 'text'" [formControl]="passwordFormControl" />
+        <button matIconButton matSuffix (click)="clickSenhaEvent($event)" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hideSenha()">
+            <mat-icon>{{hideSenha() ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        @if (passwordFormControl.hasError('required')) {
+        <mat-error>Senha é <strong>Obrigatória</strong></mat-error>
+        }
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Confirmar Senha</mat-label>
+        <input matInput [type]="hideConfirmarSenha() ? 'password' : 'text'"
+            [formControl]="passwordConfirmFormControl" />
+        <button matIconButton matSuffix (click)="clickConfirmarSenhaEvent($event)" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hideConfirmarSenha()">
+            <mat-icon>{{hideConfirmarSenha() ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        @if (passwordConfirmFormControl.hasError('required')) {
+        <mat-error>Confirmar senha é <strong>Obrigatório</strong></mat-error>
+        }
+        @if (passwordFormControl != passwordConfirmFormControl) {
+        <mat-error>Os campos senha e confirmar senha<strong>Não coicidem.</strong></mat-error>
+        }
+    </mat-form-field>
+    <div class="button-row">
+        <button matButton (click)="navigateTolistaUsuario()">Salvar</button>
+        <!-- <button matButton>Atualizar</button>
+        <button matButton>Excluir</button> -->
+        <button matButton (click)="navigateTolistaUsuario()">Cancelar</button>
+    </div>
+</form>

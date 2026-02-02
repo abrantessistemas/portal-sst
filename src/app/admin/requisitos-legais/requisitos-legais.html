@@ -1,25 +1,26 @@
-<form class="cadastro-requisito-form">
+<form class="requisito-form">
+    <h3>
+        Ref. Lista de Verificação de Atendimento aos Requisitos Legais
+    </h3>
+
+    <p>
+        Prezado (s) Senhor (es),
+
+        Estamos relacionando abaixo os documentos necessários para atender a Portaria nº 3.214, de 8 de junho de
+        1978 e
+        alterações previstas como também a CLT, para serem apresentados pela contratada, durante o período de
+        execução
+        da
+    </p>
+    <mat-form-field class="full-width">
+        <mat-label>Nome da tarefa</mat-label>
+        <input type="text" matInput [formControl]="tarefaFormControl">
+        @if (tarefaFormControl.hasError('required')) {
+        <mat-error>Nome da tarefa é <strong>Obrigatória</strong></mat-error>
+        }
+    </mat-form-field>
+
     <div class="content">
-        <h3>
-            Ref. Lista de Verificação de Atendimento aos Requisitos Legais
-        </h3>
-
-        <p>
-            Prezado (s) Senhor (es),
-
-            Estamos relacionando abaixo os documentos necessários para atender a Portaria nº 3.214, de 8 de junho de
-            1978 e
-            alterações previstas como também a CLT, para serem apresentados pela contratada, durante o período de
-            execução
-            da
-        </p>
-        <mat-form-field class="full-width">
-            <mat-label>Nome da tarefa</mat-label>
-            <input type="text" matInput [formControl]="tarefaFormControl">
-            @if (tarefaFormControl.hasError('required')) {
-            <mat-error>Nome da tarefa é <strong>Obrigatória</strong></mat-error>
-            }
-        </mat-form-field>
 
         <mat-card class="card" appearance="outlined">
             <mat-card-header>

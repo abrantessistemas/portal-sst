@@ -1,4 +1,4 @@
-.cadastro-requisito-form {
+.srequisito-form {
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -32,6 +32,7 @@
     .content {
         display: flex;
         flex-wrap: wrap;
+        margin-left: -3px;
     }
 
 }

@@ -1,0 +1,35 @@
+.logo {
+    width: 120px;
+    height: 120px;
+
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.usuario-form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    min-width: 150px;
+}
+
+.excluir {
+    background-color: red !important;
+}
+
+.example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
