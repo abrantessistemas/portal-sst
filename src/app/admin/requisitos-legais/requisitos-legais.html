@@ -20,153 +20,1348 @@
         }
     </mat-form-field>
 
-    <div class="content">
+    <mat-accordion class="example-headers-align" multi>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title> Documento</mat-panel-title>
+                <mat-panel-description>
+                    do 1 ao 10
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="content">
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>01 NR 1</mat-card-title>
+                    </mat-card-header>
 
-        <mat-card class="card" appearance="outlined">
-            <mat-card-header>
-                <mat-card-title>01 NR 1</mat-card-title>
-            </mat-card-header>
+                    <mat-card-content>
+                        <label id="example-radio-group-label">Apresentar o Plano de Segurança para a obra.</label>
+                        <br>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarPlanoSegurancaObra" [(ngModel)]="apresentarPlanoSegurancaObra">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
 
-            <mat-card-content>
-                <label id="example-radio-group-label">Apresentar o Plano de Segurança para a obra.</label>
-                <br>
-                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-                    name="apresentarPlanoSegurancaObra" [(ngModel)]="apresentarPlanoSegurancaObra">
-                    @for (opcao of opcoes; track opcao) {
-                    <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
-                    }
-                </mat-radio-group>
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput [formControl]="apresentarPlanoSegurancaObraAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
 
-            </mat-card-content>
-            <mat-form-field class="full-width">
-                <mat-label>Ação a ser tomada</mat-label>
-                <textarea matInput [formControl]="apresentarPlanoSegurancaObraAcaoFormControl"></textarea>
-            </mat-form-field>
-        </mat-card>
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>02 Geral</mat-card-title>
+                    </mat-card-header>
 
-        <mat-card class="card" appearance="outlined">
-            <mat-card-header>
-                <mat-card-title>02 Geral</mat-card-title>
-            </mat-card-header>
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar para aprovação os Curriculum Vitae de Engenheiro e Técnico de Segurança.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarAprovacaoCurriculumVitaeEngenheiroTecnicoSeguranca"
+                            [(ngModel)]="apresentarAprovacaoCurriculumVitaeEngenheiroTecnicoSeguranca">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
 
-            <mat-card-content>
-                <label id="example-radio-group-label">
-                    Apresentar para aprovação os Curriculum Vitae de Engenheiro e Técnico de Segurança.
-                </label>
-                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-                    name="apresentarAprovacaoCurriculumVitaeEngenheiroTecnicoSeguranca"
-                    [(ngModel)]="apresentarAprovacaoCurriculumVitaeEngenheiroTecnicoSeguranca">
-                    @for (opcao of opcoes; track opcao) {
-                    <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
-                    }
-                </mat-radio-group>
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarAprovacaoCurriculumVitaeEngenheiroTecnicoSegurancaAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
 
-            </mat-card-content>
-            <mat-form-field class="full-width">
-                <mat-label>Ação a ser tomada</mat-label>
-                <textarea matInput
-                    [formControl]="apresentarAprovacaoCurriculumVitaeEngenheiroTecnicoSegurancaAcaoFormControl"></textarea>
-            </mat-form-field>
-        </mat-card>
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>03 4.3.3 4.4 4.4.1</mat-card-title>
+                    </mat-card-header>
 
-        <mat-card class="card" appearance="outlined">
-            <mat-card-header>
-                <mat-card-title>03 4.3.3 4.4 4.4.1</mat-card-title>
-            </mat-card-header>
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar a comprovação das especializações dos profissionais do SESMT.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarComprovacaoEspecializacoesProfissionaisSESMT"
+                            [(ngModel)]="apresentarComprovacaoEspecializacoesProfissionaisSESMT">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
 
-            <mat-card-content>
-                <label id="example-radio-group-label">
-                    Apresentar a comprovação das especializações dos profissionais do SESMT.
-                </label>
-                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-                    name="apresentarComprovacaoEspecializacoesProfissionaisSESMT"
-                    [(ngModel)]="apresentarComprovacaoEspecializacoesProfissionaisSESMT">
-                    @for (opcao of opcoes; track opcao) {
-                    <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
-                    }
-                </mat-radio-group>
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarComprovacaoEspecializacoesProfissionaisSESMTAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
 
-            </mat-card-content>
-            <mat-form-field class="full-width">
-                <mat-label>Ação a ser tomada</mat-label>
-                <textarea matInput
-                    [formControl]="apresentarComprovacaoEspecializacoesProfissionaisSESMTAcaoFormControl"></textarea>
-            </mat-form-field>
-        </mat-card>
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>04 4.4.2</mat-card-title>
+                    </mat-card-header>
 
-        <mat-card class="card" appearance="outlined">
-            <mat-card-header>
-                <mat-card-title>04 4.4.2</mat-card-title>
-            </mat-card-header>
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar a comprovação do vínculo empregatício dos profissionais do SESMT
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarComprovacaoVinculoEmpregaticioProfissionaisSESMT"
+                            [(ngModel)]="apresentarComprovacaoVinculoEmpregaticioProfissionaisSESMT">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
 
-            <mat-card-content>
-                <label id="example-radio-group-label">
-                    Apresentar a comprovação do vínculo empregatício dos profissionais do SESMT
-                </label>
-                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-                    name="apresentarComprovacaoVinculoEmpregaticioProfissionaisSESMT"
-                    [(ngModel)]="apresentarComprovacaoVinculoEmpregaticioProfissionaisSESMT">
-                    @for (opcao of opcoes; track opcao) {
-                    <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
-                    }
-                </mat-radio-group>
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarComprovacaoVinculoEmpregaticioProfissionaisSESMTAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
 
-            </mat-card-content>
-            <mat-form-field class="full-width">
-                <mat-label>Ação a ser tomada</mat-label>
-                <textarea matInput
-                    [formControl]="apresentarComprovacaoVinculoEmpregaticioProfissionaisSESMTAcaoFormControl"></textarea>
-            </mat-form-field>
-        </mat-card>
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>05 4.12.d</mat-card-title>
+                    </mat-card-header>
 
-        <mat-card class="card" appearance="outlined">
-            <mat-card-header>
-                <mat-card-title>05 4.12.d</mat-card-title>
-            </mat-card-header>
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Cópia da ART do profissional que chefia o SESMT.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="copiaARTProfissionalChefiaSESMT" [(ngModel)]="copiaARTProfissionalChefiaSESMT">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
 
-            <mat-card-content>
-                <label id="example-radio-group-label">
-                    Cópia da ART do profissional que chefia o SESMT.
-                </label>
-                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-                    name="copiaARTProfissionalChefiaSESMT" [(ngModel)]="copiaARTProfissionalChefiaSESMT">
-                    @for (opcao of opcoes; track opcao) {
-                    <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
-                    }
-                </mat-radio-group>
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput [formControl]="copiaARTProfissionalChefiaSESMTAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
 
-            </mat-card-content>
-            <mat-form-field class="full-width">
-                <mat-label>Ação a ser tomada</mat-label>
-                <textarea matInput [formControl]="copiaARTProfissionalChefiaSESMTAcaoFormControl"></textarea>
-            </mat-form-field>
-        </mat-card>
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>06 4.12.i</mat-card-title>
+                    </mat-card-header>
 
-        <mat-card class="card" appearance="outlined">
-            <mat-card-header>
-                <mat-card-title>06 4.12.i</mat-card-title>
-            </mat-card-header>
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentação dos Quadros III, IV, V e VI e comprovante de envio anual para DRT, até 31 de
+                            janeiro do
+                            ano subseqüente.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentacaoQuadrosIII_IV_V_VIComprovanteEnvioAnualDRT31JaneiroAnoSubsequente"
+                            [(ngModel)]="apresentacaoQuadrosIII_IV_V_VIComprovanteEnvioAnualDRT31JaneiroAnoSubsequente">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
 
-            <mat-card-content>
-                <label id="example-radio-group-label">
-                    Apresentação dos Quadros III, IV, V e VI e comprovante de envio anual para DRT, até 31 de janeiro do
-                    ano subseqüente.
-                </label>
-                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-                    name="apresentacaoQuadrosIII_IV_V_VIComprovanteEnvioAnualDRT31JaneiroAnoSubsequente"
-                    [(ngModel)]="apresentacaoQuadrosIII_IV_V_VIComprovanteEnvioAnualDRT31JaneiroAnoSubsequente">
-                    @for (opcao of opcoes; track opcao) {
-                    <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
-                    }
-                </mat-radio-group>
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentacaoQuadrosIII_IV_V_VIComprovanteEnvioAnualDRT31JaneiroAnoSubsequenteAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
 
-            </mat-card-content>
-            <mat-form-field class="full-width">
-                <mat-label>Ação a ser tomada</mat-label>
-                <textarea matInput
-                    [formControl]="apresentacaoQuadrosIII_IV_V_VIComprovanteEnvioAnualDRT31JaneiroAnoSubsequenteAcaoFormControl"></textarea>
-            </mat-form-field>
-        </mat-card>
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>07 4.17</mat-card-title>
+                    </mat-card-header>
 
-    </div>
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Cópia do comprovante do registro do SESMT na DRT.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="copiaComprovanteRegistroSESMT_DRT" [(ngModel)]="copiaComprovanteRegistroSESMT_DRT">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput [formControl]="copiaComprovanteRegistroSESMT_DRTAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>08 5</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar a composição da CIPA e a programação do processo eleitoral.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarComposicaoCIPA_ProgramacaoProcessoEleitoral"
+                            [(ngModel)]="apresentarComposicaoCIPA_ProgramacaoProcessoEleitoral">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarComposicaoCIPA_ProgramacaoProcessoEleitoralAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>09 5</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia do treinamento membros da CIPA, com os certificados, antes da posse.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaTreinamentoMembrosCIPA_CertificadosAntesPosse"
+                            [(ngModel)]="apresentarCopiaTreinamentoMembrosCIPA_CertificadosAntesPosse">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaTreinamentoMembrosCIPA_CertificadosAntesPosseAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>10 5</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia atas de instalação e posse e calendário CIPA protocolada junto a DRT.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaAtasInstalacaoPosseCalendarioCIPA_ProtocoladaJuntoDRT"
+                            [(ngModel)]="apresentarCopiaAtasInstalacaoPosseCalendarioCIPA_ProtocoladaJuntoDRT">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaAtasInstalacaoPosseCalendarioCIPA_ProtocoladaJuntoDRTAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+            </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title> Documento</mat-panel-title>
+                <mat-panel-description>
+                    do 11 ao 20
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="content">
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>11 5</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Em caso de acidente grave, apresentar cópia da reunião extraordinária da CIPA, em 48 horas.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="emCasoAcidenteGraveApresentarCopiaReuniaoExtraordinariaCIPA48horas"
+                            [(ngModel)]="emCasoAcidenteGraveApresentarCopiaReuniaoExtraordinariaCIPA48horas">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="emCasoAcidenteGraveApresentarCopiaReuniaoExtraordinariaCIPA48horasAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>12 5</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia do mapa de risco.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaMapaRisco" [(ngModel)]="apresentarCopiaMapaRisco">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput [formControl]="apresentarCopiaMapaRiscoAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>13 6.6</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia do registro de treinamento sobre o uso de EPI.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaRegistroTreinamentoSobreUsoEPI"
+                            [(ngModel)]="apresentarCopiaRegistroTreinamentoSobreUsoEPI">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaRegistroTreinamentoSobreUsoEPIAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>14 6.7</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Cópia da prova de que o uso de EPI é obrigatório.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="copiaProvaQueUsoEPI_Obrigatorio" [(ngModel)]="copiaProvaQueUsoEPI_Obrigatorio">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput [formControl]="copiaProvaQueUsoEPI_ObrigatorioAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>15 7.1</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia do PCMSO, para aprovação.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaPCMSO_ParaAprovacao" [(ngModel)]="apresentarCopiaPCMSO_ParaAprovacao">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput [formControl]="apresentarCopiaPCMSO_ParaAprovacaoAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>16 7.3.1.c</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia dos documentos do médico coordenador do PCMSO designado.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaDocumentosMedicoCoordenadorPCMSO_Designado"
+                            [(ngModel)]="apresentarCopiaDocumentosMedicoCoordenadorPCMSO_Designado">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaDocumentosMedicoCoordenadorPCMSO_DesignadoAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>17 7.4.6</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia do relatório anual do PCMSO.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaRelatorioAnualPCMSO" [(ngModel)]="apresentarCopiaRelatorioAnualPCMSO">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput [formControl]="apresentarCopiaRelatorioAnualPCMSOAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>18 7.4.6.2</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia da Ata da CIPA onde o PCMSO foi apresentado e discutido.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaAtaCIPAOndePCMSOApresentadoDiscutido"
+                            [(ngModel)]="apresentarCopiaAtaCIPAOndePCMSOApresentadoDiscutido">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaAtaCIPAOndePCMSOApresentadoDiscutidoAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>19 7.5.1</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia do treinamento de primeiros socorros.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaTreinamentoPrimeirosSocorros"
+                            [(ngModel)]="apresentarCopiaTreinamentoPrimeirosSocorros">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaTreinamentoPrimeirosSocorrosAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>20 7</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópias dos treinamentos constantes no PCMSO realizados.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiasTreinamentosConstantesPCMSO_Realizados"
+                            [(ngModel)]="apresentarCopiasTreinamentosConstantesPCMSO_Realizados">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiasTreinamentosConstantesPCMSO_RealizadosAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+            </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title> Documento</mat-panel-title>
+                <mat-panel-description>
+                    do 21 ao 30
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="content">
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>21 9.1.1</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia do PPRA, para aprovação.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaPPRA_Aprovacao" [(ngModel)]="apresentarCopiaPPRA_Aprovacao">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput [formControl]="apresentarCopiaPPRA_AprovacaoAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>22 9.2.1.1</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar a revisão anual do PPRA.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarRevisaoAnualPPRA" [(ngModel)]="apresentarRevisaoAnualPPRA">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput [formControl]="apresentarRevisaoAnualPPRAAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>23 9.2.2.1</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia da Ata da CIPA onde o PPRA foi apresentado e discutido.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaAtaCIPA_OndePPRA_ApresentadoDiscutido"
+                            [(ngModel)]="apresentarCopiaAtaCIPA_OndePPRA_ApresentadoDiscutido">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaAtaCIPA_OndePPRA_ApresentadoDiscutidoAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>24 10.3.2.7.1</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia da Ata da CIPA onde o PPRA foi apresentado e discutido.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaLaudoTecnicoInstalacoesJuntoART"
+                            [(ngModel)]="apresentarCopiaLaudoTecnicoInstalacoesJuntoART">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaLaudoTecnicoInstalacoesJuntoARTAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>25 10.3.3.1</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia de treinamento de primeiros socorros para eletricistas, técnicos
+                            eletricidade/eletrônica e operadores de instalações elétricas.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaTreinamentoPrimeirosSocorrosEletricistasTecnicosEletricidade_eletronicaOperadoresInstalacoesEletricas"
+                            [(ngModel)]="apresentarCopiaTreinamentoPrimeirosSocorrosEletricistasTecnicosEletricidade_eletronicaOperadoresInstalacoesEletricas">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaTreinamentoPrimeirosSocorrosEletricistasTecnicosEletricidade_eletronicaOperadoresInstalacoesEletricasAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>26 10.3.3.2</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia de treinamento de combate a incêndio para eletricistas, técnicos
+                            eletricidade/eletrônica e operadores de instalações elétricas.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaTreinamentoCombateIncendioEletricistasTecnicosEletricidade_EletronicaOperadoresInstalacoesEletricas"
+                            [(ngModel)]="apresentarCopiaTreinamentoCombateIncendioEletricistasTecnicosEletricidade_EletronicaOperadoresInstalacoesEletricas">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaTreinamentoCombateIncendioEletricistasTecnicosEletricidade_EletronicaOperadoresInstalacoesEletricasAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>27 10.4.1.1.1</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar procedimento emitido pelo SESMT sobre autorização dos empregados para trabalhos
+                            em
+                            instalações elétricas.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarProcedimentoEmitidoSESMT_SobreAutorizacaoEmpregadosTrabalhosInstalacoesEletricas"
+                            [(ngModel)]="apresentarProcedimentoEmitidoSESMT_SobreAutorizacaoEmpregadosTrabalhosInstalacoesEletricas">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarProcedimentoEmitidoSESMT_SobreAutorizacaoEmpregadosTrabalhosInstalacoesEletricasAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>28 10.4.1.4</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar o registro de empregado(carteira de trabalho) que é autorizado a atuar em
+                            instalações
+                            elétricas.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarRegistroEmpregadoCarteiraTrabalhoAutorizadoAtuarInstalacoesEletricas"
+                            [(ngModel)]="apresentarRegistroEmpregadoCarteiraTrabalhoAutorizadoAtuarInstalacoesEletricas">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarRegistroEmpregadoCarteiraTrabalhoAutorizadoAtuarInstalacoesEletricasAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>29 10</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia do certificados de treinamento dos eletricistas.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaCertificadosTreinamentoEletricistas"
+                            [(ngModel)]="apresentarCopiaCertificadosTreinamentoEletricistas">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaCertificadosTreinamentoEletricistasAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>30 11.1.5</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia do treinamento específico para operadores de equipamento com força motriz
+                            própria,
+                            dado pela empresa que o habilitará para tal função.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaTreinamentoEspecificoOperadoresEquipamentoForcaMotrizPropriaDadoPelaEmpresaHabilitaraTalFuncao"
+                            [(ngModel)]="apresentarCopiaTreinamentoEspecificoOperadoresEquipamentoForcaMotrizPropriaDadoPelaEmpresaHabilitaraTalFuncao">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaTreinamentoEspecificoOperadoresEquipamentoForcaMotrizPropriaDadoPelaEmpresaHabilitaraTalFuncaoAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+            </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title> Documento</mat-panel-title>
+                <mat-panel-description>
+                    do 31 ao 40
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="content">
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>31 11.1.6</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia do cartão de identificação com foto do operador de equipamentos de
+                            transporte motorizado.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaCartaoIdentificacaoFotoOperadorEquipamentosTransporteMotorizado"
+                            [(ngModel)]="apresentarCopiaCartaoIdentificacaoFotoOperadorEquipamentosTransporteMotorizado">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaCartaoIdentificacaoFotoOperadorEquipamentosTransporteMotorizadoAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>32 11.1.8</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar plano de inspeção dos equipamentos de transporte motorizado.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarPlanoInspecaoEquipamentosTransporteMotorizado"
+                            [(ngModel)]="apresentarPlanoInspecaoEquipamentosTransporteMotorizado">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarPlanoInspecaoEquipamentosTransporteMotorizadoAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>33 12.6.2</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar comprovante do credenciamento de pessoa para dar manutenção e inspeção em
+                            máquinas.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarComprovanteCredenciamentoPessoaDarManutencaoInspecaoMaquinas"
+                            [(ngModel)]="apresentarComprovanteCredenciamentoPessoaDarManutencaoInspecaoMaquinas">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarComprovanteCredenciamentoPessoaDarManutencaoInspecaoMaquinasAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>34 15</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar laudo de avaliações ambientais.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarLaudoAvaliacoesAmbientais"
+                            [(ngModel)]="apresentarLaudoAvaliacoesAmbientais">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarLaudoAvaliacoesAmbientaisAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>35 17.2.3</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia de treinamento e instruções sobre método para transporte manual de carga.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaTreinamentoInstrucoesSobreMetodoTransporteManualCarga"
+                            [(ngModel)]="apresentarCopiaTreinamentoInstrucoesSobreMetodoTransporteManualCarga">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaTreinamentoInstrucoesSobreMetodoTransporteManualCargaAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>36 17.5.2</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar laudo comprovando situação do ambiente em conformidade com exigência.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarLaudoComprovandoSituacaoAmbienteConformidadeExigencia"
+                            [(ngModel)]="apresentarLaudoComprovandoSituacaoAmbienteConformidadeExigencia">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarLaudoComprovandoSituacaoAmbienteConformidadeExigenciaAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>37 18.2.1</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia do PPRA, para aprovação.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaProtocoladaComunicacaoPreviaAntesInicioObraJuntoDRT"
+                            [(ngModel)]="apresentarCopiaProtocoladaComunicacaoPreviaAntesInicioObraJuntoDRT">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaProtocoladaComunicacaoPreviaAntesInicioObraJuntoDRTAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>38 18.3.1</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia do PCMAT para aprovação.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaPCMAT_Aprovacao" [(ngModel)]="apresentarCopiaPCMAT_Aprovacao">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput [formControl]="apresentarCopiaPCMAT_AprovacaoAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>39 18</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia da Ata da CIPA onde o PCMAT foi apresentado e discutido.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaAtaCIPA_OndePCMAT_FoiApresentadoDiscutido"
+                            [(ngModel)]="apresentarCopiaAtaCIPA_OndePCMAT_FoiApresentadoDiscutido">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaAtaCIPA_OndePCMAT_FoiApresentadoDiscutidoAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>40 18.7.1</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar qualificação dos carpinteiros para uso de serra e outros equipamentos.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarQualificacaoCarpinteirosParaUsoSerraOutrosEquipamentos"
+                            [(ngModel)]="apresentarQualificacaoCarpinteirosParaUsoSerraOutrosEquipamentos">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarQualificacaoCarpinteirosParaUsoSerraOutrosEquipamentosAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title> Documento</mat-panel-title>
+                <mat-panel-description>
+                    do 41 ao 50
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="content">
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>41 18.11.1</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia da qualificação de soldadores e maçariqueiro.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaQualificacaoSoldadoresMacariqueiro"
+                            [(ngModel)]="apresentarCopiaQualificacaoSoldadoresMacariqueiro">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaQualificacaoSoldadoresMacariqueiroAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>42 18.15.1</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar projeto para montagem de andaimes, com ART do profissional legalmente habilitado.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarProjetoMontagemAndaimesART_ProfissionalLegalmenteHabilitado"
+                            [(ngModel)]="apresentarProjetoMontagemAndaimesART_ProfissionalLegalmenteHabilitado">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarProjetoMontagemAndaimesART_ProfissionalLegalmenteHabilitadoAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>43 18.6</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar laudo de Cabos de aço NBR 6327, com a ART.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarLaudoCabosAcoNBR6327ART" [(ngModel)]="apresentarLaudoCabosAcoNBR6327ART">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput [formControl]="apresentarLaudoCabosAcoNBR6327ARTAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>44 18.22.9</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar cópia do Laudo Técnico, com ART, elaborado por profissional legalmente habilitado
+                            dos equipamentos.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaLaudoTecnicoART_ElaboradoProfissionalLegalmenteHabilitadoEquipamentos"
+                            [(ngModel)]="apresentarCopiaLaudoTecnicoART_ElaboradoProfissionalLegalmenteHabilitadoEquipamentos">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaLaudoTecnicoART_ElaboradoProfissionalLegalmenteHabilitadoEquipamentosAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>45 18.26.5</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar as equipes de operários organizadas e especialmente treinadas no correto manejo
+                            do material disponíveis para o primeiro combate ao fogo.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarEquipesOperariosOrganizadasEspecialmenteTreinadasCorretoManejoMaterialDisponiveisPrimeiroCombateFogo"
+                            [(ngModel)]="apresentarEquipesOperariosOrganizadasEspecialmenteTreinadasCorretoManejoMaterialDisponiveisPrimeiroCombateFogo">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarEquipesOperariosOrganizadasEspecialmenteTreinadasCorretoManejoMaterialDisponiveisPrimeiroCombateFogoAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>46 18.28.2</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar o treinamento admissional com carga horária mínima de 6 (seis) horas, ministrado
+                            no horário de trabalho antes de iniciar suas atividades.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarTreinamentoAdmissionalCargaHorariaMinima6HorasMinistradoHorarioTrabalhoAntesIniciarAtividades"
+                            [(ngModel)]="apresentarTreinamentoAdmissionalCargaHorariaMinima6HorasMinistradoHorarioTrabalhoAntesIniciarAtividades">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarTreinamentoAdmissionalCargaHorariaMinima6HorasMinistradoHorarioTrabalhoAntesIniciarAtividadesAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>47 18.32</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Cópia e comprovante de encaminhamento para Fundacentro do resumo estatísticos anual até o
+                            ultimo dia de fevereiro do ano subseqüente.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="copiaComprovanteEncaminhamentoFundacentroResumoEstatisticosAnualUltimoDiaFevereiroAnoSubsequente"
+                            [(ngModel)]="copiaComprovanteEncaminhamentoFundacentroResumoEstatisticosAnualUltimoDiaFevereiroAnoSubsequente">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="copiaComprovanteEncaminhamentoFundacentroResumoEstatisticosAnualUltimoDiaFevereiroAnoSubsequenteFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>48 18.37.4</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentação dos comprovantes de treinamento de trabalhadores habilitados e qualificados.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentacaoComprovantesTreinamentoTrabalhadoresHabilitadosQualificados"
+                            [(ngModel)]="apresentacaoComprovantesTreinamentoTrabalhadoresHabilitadosQualificados">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentacaoComprovantesTreinamentoTrabalhadoresHabilitadosQualificadosAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>49 geral</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar o Quadro Estatístico de Acidente e Incidente até o 2º dia do mês subseqüente.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarQuadroEstatisticoAcidenteIncidente2diaMesSubsequente"
+                            [(ngModel)]="apresentarQuadroEstatisticoAcidenteIncidente2diaMesSubsequente">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarQuadroEstatisticoAcidenteIncidente2diaMesSubsequenteAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>50 geral</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar todas as análises de risco das tarefas executadas para aprovação.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarTodasAnalisesRiscoTarefasExecutadasAprovacao"
+                            [(ngModel)]="apresentarTodasAnalisesRiscoTarefasExecutadasAprovacao">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarTodasAnalisesRiscoTarefasExecutadasAprovacaoAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title> Documento</mat-panel-title>
+                <mat-panel-description>
+                    do 51 ao 60
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="content">
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>51 geral</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Em caso de acidente a comunicação do mesmo deve ser imediata.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="emCasoAcidenteComunicacaoMesmoDeveImediata"
+                            [(ngModel)]="emCasoAcidenteComunicacaoMesmoDeveImediata">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="emCasoAcidenteComunicacaoMesmoDeveImediataAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+
+                <mat-card class="card" appearance="outlined">
+                    <mat-card-header>
+                        <mat-card-title>52 geral</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <label id="example-radio-group-label">
+                            Apresentar a cópia da analise de acidente em até 24horas após o ocorrido, quando não gerar
+                            internação do acidentado.
+                        </label>
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                            name="apresentarCopiaAnaliseAcidenteAte24horasAposOcorridoQuandoNaoGerarInternacaoAcidentado"
+                            [(ngModel)]="apresentarCopiaAnaliseAcidenteAte24horasAposOcorridoQuandoNaoGerarInternacaoAcidentado">
+                            @for (opcao of opcoes; track opcao) {
+                            <mat-radio-button class="example-radio-button" [value]="opcao">{{opcao}}</mat-radio-button>
+                            }
+                        </mat-radio-group>
+
+                    </mat-card-content>
+                    <mat-form-field class="full-width">
+                        <mat-label>Ação a ser tomada</mat-label>
+                        <textarea matInput
+                            [formControl]="apresentarCopiaAnaliseAcidenteAte24horasAposOcorridoQuandoNaoGerarInternacaoAcidentadoAcaoFormControl"></textarea>
+                    </mat-form-field>
+                </mat-card>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
 </form>
