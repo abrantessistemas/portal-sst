@@ -1,11 +1,10 @@
 import { Routes } from '@angular/router';
 import { Admin } from './admin/admin';
 import { Dashboard } from './admin/dashboard/dashboard';
-import { RequisitosLegais } from './admin/requisitos-legais/requisitos-legais';
-import { Nr32 } from './admin/nr-32/nr-32';
-import { Login } from './auth/login/login';
-import { Usuario } from './admin/usuario/usuario';
 import { Perfil } from './admin/perfil/perfil';
+import { Usuario } from './admin/usuario/usuario';
+import { Login } from './auth/login/login';
+import { RequisitosLegais } from './client/requisitos-legais/requisitos-legais';
 
 export const routes: Routes = [
     {
@@ -15,7 +14,8 @@ export const routes: Routes = [
         path: 'admin', component: Admin, children: [
             { path: 'dashboard', component: Dashboard },
             { path: 'requisitos-legais', component: RequisitosLegais },
-            { path: 'nr-32', component: Nr32 },
+            // { path: 'requisitos', component: Requisitos },
+            // { path: 'nr-32', component: Nr32 },
             { path: 'perfil', component: Perfil },
             { path: 'usuario', component: Usuario },
         ]

@@ -1,0 +1,59 @@
+
+.btn-upload {
+    width: 100%;
+}
+
+.total-linhas {
+    text-align: right;
+    padding: 15px;
+}
+
+.container-arquivos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.item-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #eafae1;
+}
+
+.item-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.file-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+}
+
+.card-content {
+    margin: 16px 0;
+    min-height: 50px;
+}
+
+.descricao {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.card-actions {
+    padding: 8px 16px;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px;
+    color: #999;
+}

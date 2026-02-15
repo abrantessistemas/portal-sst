@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { FormControl, FormGroupDirective, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormGroupDirective, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -22,8 +22,11 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrl: './login.scss',
 })
 export class Login {
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-  passwordFormControl = new FormControl('', Validators.required);
+  profileForm = new FormGroup({
+    emailFormControl: new FormControl('', [Validators.required, Validators.email]),
+    passwordFormControl: new FormControl('', Validators.required)
+  });
+
   matcher = new MyErrorStateMatcher();
 
   hide = signal(true);
@@ -38,6 +41,12 @@ export class Login {
     this.router.navigate(['/condominio']);
   }
 
+  navigateLogin() {
+    console.log(this.profileForm.value);
+    if (this.profileForm.valid) {
+      this.router.navigate(['/admin/dashboard']);
+    }
+  }
   navigateToUsuario() {
     // Standard navigation
     this.router.navigate(['/admin/dashboard']);
